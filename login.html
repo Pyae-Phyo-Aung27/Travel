@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="min-h-screen bg-slate-500 text-slate-900">
+    <div class="mx-auto flex min-h-screen w-full items-center justify-center px-4 py-8 sm:px-6">
+        <div class="w-full max-w-lg rounded-[32px] bg-white p-8 shadow-[0_28px_80px_rgba(15,23,42,0.12)] sm:p-10">
+            <div class="flex flex-col items-center gap-4 text-center">
+                <img src="signicon.png" alt="icon" class="h-20 w-20 rounded-3xl bg-slate-100 p-3" />
+                <div>
+                    <h1 class="text-3xl font-semibold tracking-tight text-slate-900">Sign In</h1>
+                    <p class="mt-2 text-sm text-slate-500 sm:text-base">Welcome back! Enter your details to login.</p>
+                </div>
+            </div>
+
+            <form class="mt-8 space-y-6">
+                <div class="space-y-4">
+                    <label class="space-y-2 text-sm text-slate-600">
+                        <span>Email Address</span>
+                        <input type="email" placeholder="name@company.com"
+                            class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100" />
+                    </label>
+                    <label class="space-y-2 text-sm text-slate-600">
+                        <span>Password</span>
+                        <input type="password" placeholder="Enter password"
+                            class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100" />
+                    </label>
+                </div>
+
+                <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                    <label class="flex items-center gap-3 text-sm text-slate-600">
+                        <input type="checkbox"
+                            class="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-sky-500" />
+                        Remember me
+                    </label>
+                    <a href="#" class="text-sm font-semibold text-indigo-600 hover:text-sky-700">Forgot password?</a>
+                </div>
+
+                <button type="submit"
+                    class="w-full rounded-2xl bg-indigo-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2">Sign
+                    In</button>
+
+                <p class="text-center text-sm text-slate-500">Don’t have an account? <a href="register.html"
+                        class="font-semibold text-indigo-900 hover:text-sky-600">Create one</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
