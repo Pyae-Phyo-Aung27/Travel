@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuietMind UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+  </head>
+
+  <body class="bg-[#d8e4e4]">
+    <!-- OVERLAY -->
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black/40 z-40 hidden lg:hidden">
+    </div>
+
+    <div class="h-screen flex overflow-hidden">
+      <!-- SIDEBAR -->
+      <aside id="sidebar" class="fixed lg:static z-50 top-0 left-0 w-[290px] h-full bg-[#f6f3f1] border-r border-[#ebe7e4] transform -translate-x-full lg:translate-x-0 transition-all duration-300">
+        <div class="h-full flex flex-col px-6 py-7">
+          <!-- LOGO -->
+          <div class="flex items-center justify-between mb-8">
+            <div class="flex items-center gap-3">
+              <img src="image/flower.png" alt="" class="w-11 h-11 rounded-2xl bg-[#d9ead6] flex items-center justify-center text-xl p-2"/>
+              <div>
+                <h1 class="text-[26px] font-bold text-[#1e1e1e] leading-none">
+                  QuietMind
+                </h1>
+
+                <p class="text-sm text-gray-400 mt-1">Beginner's Haven</p>
+              </div>
+            </div>
+
+            <!-- CLOSE -->
+            <button id="closeBtn" class="lg:hidden text-3xl text-gray-500">
+              ×
+            </button>
+          </div>
+
+          <!-- BUTTON -->
+          <button
+            class="bg-[#56735b] hover:bg-[#466149] transition text-white rounded-full py-4 font-semibold flex items-center justify-center gap-3"
+          >
+            <span class="text-2xl">+</span>
+            New Note
+          </button>
+
+          <!-- MENU -->
+          <div class="mt-10 flex-1">
+            <p class="text-xs tracking-widest text-gray-400 font-bold mb-4">
+              LIBRARY
+            </p>
+
+            <div class="space-y-2">
+              <div
+                class="bg-[#d9e5d7] text-[#4e6954] rounded-2xl px-4 py-4 flex items-center gap-3 font-medium"
+              >
+                📄 Notes
+              </div>
+
+              <div
+                class="rounded-2xl px-4 py-4 flex items-center gap-3 text-gray-600 hover:bg-gray-100 cursor-pointer"
+              >
+                📁 Categories
+              </div>
+            </div>
+
+            <!-- FAVORITES -->
+            <div class="mt-10">
+              <p class="text-xs tracking-widest text-gray-400 font-bold mb-4">
+                FAVORITES
+              </p>
+
+              <div class="space-y-4 text-gray-500">
+                <p>• Personal</p>
+                <p>• Creative Work</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FOOTER -->
+          <div class="space-y-5 text-gray-500 text-[15px]">
+            <div class="flex items-center gap-3">⚙️ Settings</div>
+
+            <div class="flex items-center gap-3">📦 Archive</div>
+
+            <div class="flex items-center gap-3">❓ Help</div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- CONTENT -->
+      <main class="flex-1 overflow-y-auto bg-[#fbf9f8]">
+        <!-- TOP -->
+        <div
+          class="px-4 lg:px-10 py-5 flex items-center justify-between sticky top-0 bg-slate-200 gap-3"
+        >
+          <!-- LEFT -->
+          <div class="flex items-center gap-3 flex-1">
+            <!-- HAMBURGER -->
+            <button
+              id="menuBtn"
+              class="lg:hidden text-3xl text-gray-700 shrink-0 mb-2"
+            >
+              ☰
+            </button>
+
+            <!-- SEARCH -->
+            <div
+              class="sm:flex items-center bg-[#f2efed] rounded-full px-4 py-2 lg:py-4 flex-1 max-w-[820px] ring-1 ring-gray-300 sm:px-4 text-sm lg:text-lg"
+            >
+              <span class="shrink-0">🔍</span>
+
+              <input
+                type="text"
+                placeholder="Search your thoughts..."
+                class="bg-transparent outline-none px-2 text-gray-600 min-w-0"
+              />
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="flex items-center gap-3 shrink-0">
+            <button
+              class="hidden sm:block bg-gray-500 text-white px-5 h-[46px] rounded-full font-medium hover:bg-[#466149] transition whitespace-nowrap"
+            >
+              + New Notes
+            </button>
+
+            <img
+              src="image/profile.png"
+              class="w-11 h-11 rounded-full object-cover shrink-0 lg:w-16 lg:h-16"
+            />
+          </div>
+        </div>
+        <!-- BODY -->
+        <div class="px-4 lg:px-10 pb-10">
+          <!-- TITLE -->
+          <div
+            class="mb-10 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between"
+          >
+            <div>
+              <h1
+                class="text-[38px] lg:text-[58px] font-bold text-[#171717] leading-tight"
+              >
+                Good morning, Julian.
+              </h1>
+
+              <p class="text-gray-500 text-lg mt-2">
+                Take a breath. What's on your mind today?
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+              <button
+                class="bg-[#f2efed] px-5 min-h-[46px] rounded-full text-gray-600 font-medium flex items-center gap-2 whitespace-nowrap"
+              >
+                <img
+                  src="image/recent.png"
+                  alt=""
+                  class="w-5 h-5 object-contain"
+                />
+
+                <span>Recent</span>
+              </button>
+
+              <button
+                class="bg-[#f2efed] px-5 min-h-[46px] rounded-full text-gray-600 font-medium flex items-center gap-2 whitespace-nowrap"
+              >
+                <img
+                  src="image/layout.png"
+                  alt=""
+                  class="w-5 h-5 object-contain"
+                />
+
+                <span>Layout</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- GRID -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <!-- BIG CARD -->
+            <div class="lg:col-span-8 bg-[#f6f3f1] rounded-[30px] p-8">
+              <div class="flex items-center gap-3 mb-5">
+                <span
+                  class="bg-green-700 text-white text-sm px-4 py-2 rounded-full"
+                >
+                  Creative Work
+                </span>
+
+                <span class="text-gray-400 text-sm"> • 2 hours ago </span>
+              </div>
+
+              <div class="flex justify-between gap-6">
+                <div>
+                  <h2
+                    class="text-[38px] font-bold leading-tight text-[#202020]"
+                  >
+                    The Philosophy of Quiet Productivity
+                  </h2>
+
+                  <p class="text-gray-500 leading-9 text-lg mt-5">
+                    In a world that never stops shouting, there is a profound
+                    power in finding silence. This morning I'm reflecting on how
+                    we can build tools that don't demand attention, but rather
+                    reward it...
+                  </p>
+
+                  <div class="flex gap-3 mt-8">
+                    <span class="bg-[#ece9e7] px-4 py-2 rounded-full text-sm">
+                      #mindfulness
+                    </span>
+
+                    <span class="bg-[#ece9e7] px-4 py-2 rounded-full text-sm">
+                      #design-ethics
+                    </span>
+                  </div>
+                </div>
+
+                <!-- CIRCLE -->
+                <div class="hidden md:block">
+                  <div class="w-24 h-24 rounded-full bg-[#e7e4e2]"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT CARD -->
+            <div class="lg:col-span-4 bg-[#f6f3f1] rounded-[30px] p-8">
+              <span
+                class="bg-[#d9ead6] text-[#56735b] text-sm px-4 py-2 rounded-full"
+              >
+                Ideas
+              </span>
+
+              <h3 class="text-3xl font-semibold mt-6">Morning Ritual Ideas</h3>
+
+              <ol class="mt-6 space-y-4 text-gray-500 text-lg">
+                <li>1. Cold water therapy</li>
+                <li>2. 5 minutes of focused breathing</li>
+                <li>3. Tea ceremony without screens...</li>
+              </ol>
+
+              <div class="mt-8">
+                <span class="bg-[#ece9e7] px-4 py-2 rounded-full text-sm">
+                  #wellness
+                </span>
+              </div>
+            </div>
+
+            <!-- CARD -->
+            <div
+              class="lg:col-span-4 bg-[#f6f3f1] rounded-[30px] overflow-hidden"
+            >
+              <img
+                src="image/img16.png"
+                class="w-full h-[220px] object-cover"
+              />
+
+              <div class="p-6">
+                <h3 class="text-3xl font-semibold">Office Redesign Notes</h3>
+
+                <p class="text-gray-500 mt-4 leading-8">
+                  Need to prioritize ergonomic comfort and natural light
+                  diffusion...
+                </p>
+              </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="lg:col-span-4 bg-[#f6f3f1] rounded-[30px] p-6">
+              <span class="bg-[#ece9e7] px-4 py-2 rounded-full text-sm">
+                Personal
+              </span>
+              <h3 class="text-3xl font-semibold mt-6">Weekend Grocery List</h3>
+
+              <ul class="mt-5 text-gray-500 text-lg space-y-4">
+                <li>• Fresh ginger & mint</li>
+                <li>• Organic honey</li>
+              </ul>
+            </div>
+
+            <!-- CARD -->
+            <div class="lg:col-span-4 bg-[#f6f3f1] rounded-[30px] p-6">
+              <div class="flex justify-between">
+                <span
+                  class="bg-[#dce7f8] text-[#5b7bb3] px-4 py-2 rounded-full text-sm"
+                >
+                  Work
+                </span>
+
+                <span class="text-gray-400"> Mar 12 </span>
+              </div>
+
+              <h3 class="text-3xl font-semibold mt-6">Project Alpha Review</h3>
+
+              <p class="text-gray-500 mt-4 leading-8">
+                The feedback from the initial user group was surprisingly
+                positive regarding the soft-focus UI...
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="fixed bottom-5 right-5 bg-green-700 text-white rounded-full w-12 h-12 text-3xl shadow-lg lg:hidden"
+        >
+          +
+        </button>
+      </main>
+    </div>
+
+    <script>
+      const sidebar = document.getElementById("sidebar");
+      const menuBtn = document.getElementById("menuBtn");
+      const closeBtn = document.getElementById("closeBtn");
+      const overlay = document.getElementById("overlay");
+
+      function openMenu() {
+        sidebar.classList.remove("-translate-x-full");
+        overlay.classList.remove("hidden");
+      }
+
+      function closeMenu() {
+        sidebar.classList.add("-translate-x-full");
+        overlay.classList.add("hidden");
+      }
+
+      menuBtn.addEventListener("click", openMenu);
+      closeBtn.addEventListener("click", closeMenu);
+      overlay.addEventListener("click", closeMenu);
+    </script>
+  </body>
+</html>
